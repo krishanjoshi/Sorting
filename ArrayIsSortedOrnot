@@ -1,0 +1,58 @@
+package arraysProblem;
+
+public class SortedArray {
+	
+	public static void isSorted1(int arr[])
+	{
+		int first = arr[0];
+		boolean flag = true;
+		
+		for (int i=0 ;i<arr.length;i++)
+		{
+			for (int j=0+i;j<arr.length;j++)
+			{
+				int temp = arr[i];
+				if ( temp > arr[j])
+				{
+					flag = false;
+					break;
+				}
+			}
+			
+		}
+		
+		
+		if ( flag)
+			System.out.println("Array is Sorted.");
+		else
+			System.out.println("Array is not Sorted.");
+	}
+	
+	public static void optimalSolutionSort(int arr[])
+	{
+	    boolean flag = true;
+		for (int i=1;i < arr.length;i++)
+		{
+			if ( arr[i]< arr[i-1])
+			{
+				flag = false;
+				break;
+			}
+				
+		}
+		
+		if ( flag)
+			System.out.println("Array is Sorted.");
+		else
+			System.out.println("Array is not Sorted.");
+	}
+
+	public static void main(String[] args) {
+		
+		int arr[] = {5,4,6,7,8};
+		isSorted1(arr);
+		
+		
+		optimalSolutionSort(arr);
+	}
+}
