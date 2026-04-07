@@ -1,0 +1,42 @@
+package arraysProblem;
+
+public class MaxConsicutiveOnes {
+	
+	
+	public static void maxNum1(int arr[])
+	{
+		int i =0,j=1, start =0, max = 0;
+		
+		while (j < arr.length)		
+		{
+			//if both i & j are 1;
+			if ( arr[i]==1 && ( arr[i]== arr[j]))
+			{
+				if ( max < ( j-i+1) )
+					max = j-i+1;
+				j++;
+			}
+			//j is apart from one.
+			else
+			{
+				i= j+1;
+				j=i+1;
+				start=i;
+			}
+		}
+		
+		System.out.println("max is : " + max);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//
+		//int arr[]={1, 1, 0, 1, 1, 1};
+		int arr[]={1, 0, 1, 1, 0, 1} ;
+		
+		maxNum1(arr);
+
+	}
+
+}
