@@ -1,0 +1,44 @@
+package arraysProblem;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class SumOfDigits {
+	
+	public static void main(String[] args) {
+		
+		
+		//int arr[]= {2,3,5,8,11};
+		int arr[]={2,6,5,8,11};
+		int target =15;
+		boolean flag = true;
+		
+		Map<Integer, Integer> map= new HashMap<Integer, Integer>();
+		for (int i=0;i<arr.length;i++)
+		{
+			map.put(arr[i], i);
+			
+		}
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			int ele = arr[i];
+			int reminder = target - ele;
+			
+			if ( map.containsKey(reminder)) 
+			{
+				System.out.println("Yes sum exists");
+				System.out.println("The indices are : " + i + ": " + map.get(reminder));
+				flag = false;
+				break;
+			}
+			
+		}
+		
+		if ( flag)
+		{
+			System.out.println("Sum Doesn't Exists.");
+		}
+	}
+
+}
