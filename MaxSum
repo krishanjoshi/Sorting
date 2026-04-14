@@ -1,0 +1,39 @@
+package arraysProblem;
+
+import java.util.*;
+
+class Checksolution {
+    // Function to find maximum sum of subarrays
+	public int maxSubArray(int[] nums) {
+
+		int sum = 0;
+		int maxSum = Integer.MIN_VALUE;
+		for (int i = 0; i < nums.length; i++) {
+			sum = sum + nums[i];
+
+			if (maxSum < sum)
+				maxSum = sum;
+
+			if (sum < 0)
+				sum = 0;
+		}
+
+		return maxSum;
+
+	}
+}
+
+// Separate Main class in same file
+public class maxSum {
+    public static void main(String[] args) {
+        int[] arr = {2, 3, 5, -2, 7, -4 };
+
+        // Create an instance of Solution class
+        Checksolution sol = new Checksolution();
+
+        int maxSum = sol.maxSubArray(arr);
+
+        // Print the max subarray sum
+        System.out.println("The maximum subarray sum is: " + maxSum);
+    }
+}
