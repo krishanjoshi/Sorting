@@ -1,0 +1,37 @@
+package revision2;
+
+public class BuyNSell {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int arr[]= {7,6,4,3,1};
+		int maxValue =0;
+		int minValue = Integer.MAX_VALUE;
+		
+		
+		for(int i : arr)
+		{
+			//System.out.println(i);
+			
+			//Find the minimum Value.
+			if ( i<minValue)
+				minValue =i;
+			
+			else
+			{
+				//find the profit.
+				maxValue = Math.max(maxValue, (i -minValue));
+			}
+			
+			
+		}
+		
+		
+		System.out.println("Max Profit would be : " + maxValue);
+		
+	}
+
+}
