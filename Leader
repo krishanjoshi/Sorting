@@ -1,0 +1,44 @@
+package arraysProblem;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Leader {
+  
+	 public void findLeader(int arr[])
+	 {
+		 int left=0, right = arr.length-1;
+		 
+		 List<Integer> st = new ArrayList<Integer>();
+		 st.add(arr[right]);
+		 int i = arr.length-2;
+		 int max=arr[right];
+		 while( i>=0 )
+		 {
+			 if ( arr[i] > max)
+			 {
+				 max = arr[i];
+				 st.add(arr[i]);
+			 }
+			 i--;
+		 }
+		 
+	     for (int ele : st)
+	     {
+	    	 System.out.print(ele + " ");
+	     }
+		
+	 }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int arr[]= {10, 22, 12, 3, 0, 6};
+		
+		Leader ld = new Leader();
+		ld.findLeader(arr);
+		
+
+	}
+
+}
